@@ -10,20 +10,71 @@
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
       crossorigin
     ></script>
+    <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>React ⚛️</title>
   </head>
   <body>
+
     <div id="root"></div>
     <script type="text/javascript">
-      let heading = React.createElement(
-          "h1",
-          null,
-          "Getting Started with React"
+      let listDays = React.createElement(
+          "ul",
+          { style: { color: "green "} },
+          React.createElement("li", null, "Monday"),
+          React.createElement("li", null, "Tuesday"),
+          React.createElement("li", null, "Wednesday"),
+          React.createElement("li", null, "Thursdasy"),
+          React.createElement("li", null, "Friday"),
+          React.createElement("li", null, "Saturday"),
+          React.createElement("li", null, "Sunday"),
         );
       ReactDOM.render(
-        heading,
+        listDays,
         document.getElementById("root")
+      );
+    </script>
+
+    <div>------------------------------------------------------------------------------------------------------</div>
+
+    <div id="root02"></div>
+    <script type="text/babel">
+      let secondMonth = "Feburary"
+      let lastMonth = "December"
+      ReactDOM.render(
+        <ul>
+          <li>January</li>
+          <li>{secondMonth.toUpperCase()}</li>
+          <li>March</li>
+          <li>April</li>
+          <li>May</li>
+          <li>June</li>
+          <li>July</li>
+          <li>August</li>
+          <li>September</li>
+          <li>October</li>
+          <li>November</li>
+          <li>{lastMonth}</li>
+        </ul>,
+        document.getElementById("root02")
       );
     </script>
   </body>
 </html>
+
+
+
+
+<!-- 
+<script type="text/javascript">
+  let heading = React.createElement(
+    "h1",
+    null,
+    "Getting Started with React"
+  );
+
+  ReactDOM.render(
+    heading,
+    document.getElementById("root")
+  );
+</script> -->
