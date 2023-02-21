@@ -15,55 +15,97 @@
     <title>React ⚛️</title>
   </head>
   <body>
-
     <div id="root"></div>
     <script type="text/javascript">
       let listDays = React.createElement(
-          "ul",
-          { style: { color: "green "} },
-          React.createElement("li", null, "Monday"),
-          React.createElement("li", null, "Tuesday"),
-          React.createElement("li", null, "Wednesday"),
-          React.createElement("li", null, "Thursdasy"),
-          React.createElement("li", null, "Friday"),
-          React.createElement("li", null, "Saturday"),
-          React.createElement("li", null, "Sunday"),
-        );
-      ReactDOM.render(
-        listDays,
-        document.getElementById("root")
+        "ul",
+        { style: { color: "green " } },
+        React.createElement("li", null, "Monday"),
+        React.createElement("li", null, "Tuesday"),
       );
+      ReactDOM.render(listDays, document.getElementById("root"));
     </script>
 
-    <div>------------------------------------------------------------------------------------------------------</div>
+    <div>
+      ------------------------------------------------------------------------------------------------------
+    </div>
 
     <div id="root02"></div>
     <script type="text/babel">
-      let secondMonth = "Feburary"
-      let lastMonth = "December"
+      let secondMonth = "Feburary";
       ReactDOM.render(
         <ul>
           <li>January</li>
           <li>{secondMonth.toUpperCase()}</li>
           <li>March</li>
-          <li>April</li>
-          <li>May</li>
-          <li>June</li>
-          <li>July</li>
-          <li>August</li>
-          <li>September</li>
-          <li>October</li>
-          <li>November</li>
-          <li>{lastMonth}</li>
         </ul>,
         document.getElementById("root02")
       );
     </script>
+
+    <div>
+      ------------------------------------------------------------------------------------------------------
+    </div>
+
+    <div id="root03"></div>
+    <script type="text/babel">
+      function Header(props) {
+        return (
+          <header>
+            <h1>{props.name} bank</h1>
+          </header>
+        );
+      }
+      const dishes = [
+        "Black Bean Soup",
+        "Macaroni and Cheese",
+        "Salmon and Potatoes",
+        "Pizza",
+        "Steak"
+      ];
+      const dishObjects = dishes.map((dish, i) => ({
+        id: i,
+        title: dish
+      }));
+      console.log(dishObjects);
+      function Main(props) {
+        return (
+          <section>
+            <ul>
+              {props.dishes.map((dish) => (
+                <li key={dish.id}>
+                  {dish.title}
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      }
+      function Footer(props) {
+        return (
+          <footer>
+            <p>Copyright {props.year}</p>
+          </footer>
+        )
+      }
+      function App() {
+        return (
+          <div>
+            <Header name="Yoni"/>
+            <Main adjective="amazing" dishes={dishObjects}/>
+            <Footer year={new Date().getFullYear()}/>
+          </div>
+        )
+      }
+      ReactDOM.render(
+        <div>
+          <App />
+        </div>,
+        document.getElementById("root03")
+      );
+    </script>
   </body>
 </html>
-
-
-
 
 <!-- 
 <script type="text/javascript">
