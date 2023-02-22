@@ -52,7 +52,7 @@
       function Header(props) {
         return (
           <header>
-            <h1>{props.name} bank</h1>
+            <h1>{props.name} Bank</h1>
           </header>
         );
       }
@@ -71,6 +71,7 @@
       function Main(props) {
         return (
           <section>
+            <img height={200} src="./pexels-photo-262978.webp" />
             <ul>
               {props.dishes.map((dish) => (
                 <li key={dish.id}>
@@ -90,11 +91,11 @@
       }
       function App() {
         return (
-          <div>
+          <React.Fragment>
             <Header name="Yoni"/>
             <Main adjective="amazing" dishes={dishObjects}/>
             <Footer year={new Date().getFullYear()}/>
-          </div>
+          </React.Fragment>
         )
       }
       ReactDOM.render(
